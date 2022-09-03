@@ -1,1 +1,88 @@
-rahul patidar
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica,  sans-serif;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  height: 300px;
+  text-align: center;
+}
+.containerTab {
+  padding: 20px;
+  color: white;
+}
+.row:after {
+  display: table;
+  content: "";
+  clear: both;
+  }
+
+.closebtn {
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    color: white;
+   }
+</style>
+</head>
+<body>
+  <div style="text-align: center">
+    <h1>Expanding Grid</h1>
+    <p>Click On The Boxes</p>
+  </div>
+  <div class="row">
+    <div class="column" onclick="openTab('b1');" style="background:green;">
+      box 1
+    </div>
+    <div class="column" onclick="openTab('b2');" style="background:red;">
+      box 2
+    </div>
+    <div class="column" onclick="openTab('b3');" style="background:violet;">
+      box 3
+    </div>
+  </div>
+  <div id="b1" class="containerTab" style="display:none;background:green;">
+    <span onclick="this.parentElement.style.display ='none'" class="closebtn">&times;
+    </span>
+    <h2>Box 1</h2>
+    <p>rahul patidarjunalkera</p>
+  </div>
+  <div id="b2" class="containerTab" style="display:none;background:red;">
+    <span onclick="this.parentElement.style.display ='none'" class="closebtn">&times;
+    </span>
+    <h2>Box 2</h2>
+    <p>rahul patidarjunalkera</p>
+  </div>
+  <div id="b3" class="containerTab" style="display:none;background:violet;">
+    <span onclick="this.parentElement.style.display ='none'" class="closebtn">&times;
+    </span>
+    <h2>Box 3</h2>
+    <p>rahul patidarjunalkera</p>
+  </div>
+
+<script>
+function openTab(tabName) {
+var i, x;
+x = document.getElementsByClassName("containerTab");
+for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";
+}
+document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html>
